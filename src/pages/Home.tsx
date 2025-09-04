@@ -1,34 +1,33 @@
 import { Button } from "@/components/ui/button";
-import ProductCard from "@/components/ui/product-card";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Star, Clock, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-fashion.jpg";
-import productTshirt from "@/assets/product-tshirt.jpg";
-import productDress from "@/assets/product-dress.jpg";
-import productTrousers from "@/assets/product-trousers.jpg";
+import heroImage from "@/assets/restaurant-hero.jpg";
+import dish1 from "@/assets/dish-1.jpg";
+import dish2 from "@/assets/dish-2.jpg";
+import wineSelection from "@/assets/wine-selection.jpg";
 
 const Home = () => {
-  const featuredProducts = [
+  const featuredDishes = [
     {
       id: "1",
-      name: "Essential Tee",
-      price: 98,
-      image: productTshirt,
-      category: "Essentials"
+      name: "Seared Duck Breast",
+      description: "With cherry gastrique and seasonal vegetables",
+      image: dish1,
+      price: "$42"
     },
     {
       id: "2", 
-      name: "Midnight Dress",
-      price: 295,
-      image: productDress,
-      category: "Dresses"
+      name: "Chocolate Soufflé",
+      description: "Classic French dessert with gold leaf",
+      image: dish2,
+      price: "$18"
     },
     {
       id: "3",
-      name: "Tailored Trousers",
-      price: 225,
-      image: productTrousers,
-      category: "Bottoms"
+      name: "Wine Pairing",
+      description: "Curated selection by our sommelier",
+      image: wineSelection,
+      price: "$85"
     }
   ];
 
@@ -40,48 +39,49 @@ const Home = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         />
-        <div className="absolute inset-0 bg-luxury-black/30" />
+        <div className="absolute inset-0 bg-restaurant-burgundy/40" />
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <div className="animate-fade-in">
             <div className="flex items-center justify-center mb-6">
-              <Sparkles className="h-6 w-6 text-accent mr-2" />
-              <span className="text-sm uppercase tracking-widest text-luxury-cream">
-                New Collection
+              <Star className="h-6 w-6 text-restaurant-gold mr-2" />
+              <span className="text-sm uppercase tracking-widest text-restaurant-cream font-serif">
+                Michelin Guide Recognition
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-luxury-cream mb-6 text-balance leading-tight">
-              Timeless
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-script font-bold text-restaurant-cream mb-6 text-balance leading-tight">
+              An Evening of
               <br />
-              Minimalism
+              Culinary Art
             </h1>
             
-            <p className="text-lg md:text-xl text-luxury-cream/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Discover our curated collection of essential pieces crafted with 
-              exceptional attention to detail and sustainable materials.
+            <p className="text-lg md:text-xl text-restaurant-cream/90 mb-8 max-w-2xl mx-auto leading-relaxed font-serif">
+              Experience the finest French cuisine crafted with passion, 
+              seasonal ingredients, and timeless techniques in an intimate setting.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
                 asChild
                 size="lg"
-                className="bg-luxury-cream text-luxury-black hover:bg-luxury-cream-warm transition-colors font-medium px-8"
+                variant="elegant"
+                className="px-8 font-serif"
               >
-                <Link to="/shop">
-                  Explore Collection
+                <Link to="/reservations">
+                  Reserve Your Table
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               
               <Button 
-                variant="outline"
+                variant="elegant-outline"
                 size="lg"
                 asChild
-                className="border-luxury-cream text-luxury-cream hover:bg-luxury-cream hover:text-luxury-black transition-colors font-medium px-8"
+                className="px-8 font-serif"
               >
-                <Link to="/about">
-                  Our Story
+                <Link to="/menu">
+                  View Menu
                 </Link>
               </Button>
             </div>
@@ -89,30 +89,69 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Products */}
-      <section className="py-20 px-4">
+      {/* Welcome Section */}
+      <section className="py-20 px-4 bg-restaurant-cream">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="animate-slide-up">
+            <span className="text-sm uppercase tracking-widest text-restaurant-burgundy/60 mb-4 block font-serif">
+              Welcome to Lumière
+            </span>
+            <h2 className="text-4xl md:text-5xl font-script font-bold text-restaurant-burgundy mb-8">
+              Where Every Meal is a Masterpiece
+            </h2>
+            <p className="text-lg text-restaurant-burgundy/80 leading-relaxed font-serif">
+              For over two decades, Chef Marcel Dubois has been creating extraordinary 
+              culinary experiences that celebrate the finest traditions of French gastronomy. 
+              Each dish tells a story, each flavor a carefully composed note in our 
+              symphony of taste.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Dishes */}
+      <section className="py-20 px-4 bg-restaurant-burgundy/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-slide-up">
-            <span className="text-sm uppercase tracking-widest text-muted-foreground mb-4 block">
-              Featured
+            <span className="text-sm uppercase tracking-widest text-restaurant-burgundy/60 mb-4 block font-serif">
+              Signature Creations
             </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">
-              Signature Pieces
+            <h2 className="text-4xl md:text-5xl font-script font-bold text-restaurant-burgundy mb-6">
+              Chef's Recommendations
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Each piece is thoughtfully designed to transcend seasons and trends, 
-              creating a wardrobe that speaks to the modern minimalist.
+            <p className="text-lg text-restaurant-burgundy/80 max-w-2xl mx-auto font-serif">
+              Discover our most celebrated dishes, each crafted with the finest ingredients 
+              and presented with artistic precision.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-            {featuredProducts.map((product, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            {featuredDishes.map((dish, index) => (
               <div 
-                key={product.id}
-                className="animate-scale-in"
+                key={dish.id}
+                className="group animate-scale-in bg-restaurant-cream rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <ProductCard {...product} />
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={dish.image}
+                    alt={dish.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-script font-semibold text-restaurant-burgundy mb-2">
+                    {dish.name}
+                  </h3>
+                  <p className="text-restaurant-burgundy/70 mb-4 font-serif">
+                    {dish.description}
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-2xl font-script font-bold text-restaurant-gold">
+                      {dish.price}
+                    </span>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -120,12 +159,12 @@ const Home = () => {
           <div className="text-center mt-12">
             <Button 
               asChild
-              variant="outline"
+              variant="elegant-outline"
               size="lg"
-              className="font-medium px-8"
+              className="font-serif px-8"
             >
-              <Link to="/shop">
-                View All Products
+              <Link to="/menu">
+                Explore Full Menu
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -133,31 +172,60 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Philosophy Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="animate-fade-in">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-8">
-              Philosophy
-            </h2>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                We believe in the power of simplicity. Each garment is an investment 
-                in quality, designed to be cherished for years to come.
-              </p>
-              <p>
-                Our commitment extends beyond fashion to sustainability, ethical production, 
-                and timeless design that transcends fleeting trends.
+      {/* Restaurant Info */}
+      <section className="py-20 bg-restaurant-burgundy text-restaurant-cream">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="animate-fade-in">
+              <Clock className="h-8 w-8 text-restaurant-gold mx-auto mb-4" />
+              <h3 className="text-xl font-script font-semibold mb-2">Hours</h3>
+              <p className="text-restaurant-cream/80 font-serif">
+                Tuesday - Saturday<br />
+                5:30 PM - 10:00 PM
               </p>
             </div>
+            
+            <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <MapPin className="h-8 w-8 text-restaurant-gold mx-auto mb-4" />
+              <h3 className="text-xl font-script font-semibold mb-2">Location</h3>
+              <p className="text-restaurant-cream/80 font-serif">
+                123 Gourmet Avenue<br />
+                Downtown District
+              </p>
+            </div>
+            
+            <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              <Star className="h-8 w-8 text-restaurant-gold mx-auto mb-4" />
+              <h3 className="text-xl font-script font-semibold mb-2">Accolades</h3>
+              <p className="text-restaurant-cream/80 font-serif">
+                Michelin Guide Featured<br />
+                James Beard Nominated
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-restaurant-cream">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <div className="animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-script font-bold text-restaurant-burgundy mb-8">
+              Ready for an Unforgettable Evening?
+            </h2>
+            <p className="text-lg text-restaurant-burgundy/80 mb-8 font-serif">
+              Reserve your table today and embark on a culinary journey that will 
+              awaken your senses and create lasting memories.
+            </p>
             
             <Button 
               asChild
               size="lg"
-              className="mt-8 font-medium px-8"
+              variant="elegant"
+              className="font-serif px-8"
             >
-              <Link to="/about">
-                Learn More
+              <Link to="/reservations">
+                Make Reservation
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

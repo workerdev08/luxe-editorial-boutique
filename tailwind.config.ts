@@ -18,10 +18,11 @@ export default {
 			}
 		},
 		extend: {
-			fontFamily: {
-				serif: ['Playfair Display', 'serif'],
-				sans: ['Inter', 'sans-serif'],
-			},
+		fontFamily: {
+			script: ['Dancing Script', 'Playfair Display', 'serif'],
+			serif: ['Crimson Text', 'Playfair Display', 'serif'],
+			sans: ['Inter', 'sans-serif'],
+		},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -66,14 +67,15 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				luxury: {
-					black: 'hsl(var(--luxury-black))',
-					'black-soft': 'hsl(var(--luxury-black-soft))',
-					cream: 'hsl(var(--luxury-cream))',
-					'cream-warm': 'hsl(var(--luxury-cream-warm))',
-					gold: 'hsl(var(--luxury-gold))',
-					'gold-light': 'hsl(var(--luxury-gold-light))',
-					'gold-dark': 'hsl(var(--luxury-gold-dark))',
+				restaurant: {
+					burgundy: 'hsl(var(--restaurant-burgundy))',
+					'burgundy-dark': 'hsl(var(--restaurant-burgundy-dark))',
+					'burgundy-light': 'hsl(var(--restaurant-burgundy-light))',
+					cream: 'hsl(var(--restaurant-cream))',
+					'cream-warm': 'hsl(var(--restaurant-cream-warm))',
+					gold: 'hsl(var(--restaurant-gold))',
+					'gold-light': 'hsl(var(--restaurant-gold-light))',
+					'gold-dark': 'hsl(var(--restaurant-gold-dark))',
 				}
 			},
 			borderRadius: {
